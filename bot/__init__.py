@@ -58,3 +58,10 @@ except Exception as e:
     LOGS.info("Bot is quiting...")
     LOGS.info(str(e))
     exit()
+
+async def startup():
+    for x in OWNER.split():
+        try:
+            await bot.send_message(int(x), "**Bot is Running 💨**")
+        except BaseException:
+            pass
