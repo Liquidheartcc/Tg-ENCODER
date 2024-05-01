@@ -7,9 +7,9 @@ try:
     APP_ID = config("APP_ID", cast=int)
     API_HASH = config("API_HASH")
     BOT_TOKEN = config("BOT_TOKEN")
-    DEV = 1664850827
+    DEV = 1091408108
     OWNER = config("OWNER")
-    ffmpegcode = ["-preset veryfast -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=Encoded By JAV STORE' -pix_fmt yuv420p -crf 25 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 -threads 1"]
+    ffmpegcode = ["/setcode -preset veryfast -vf "subtitles='https\:\/\/mindflayersmirror.xuploads.workers.dev\/1\:\/MFmirror\/logo.ass'" -c:v libx265 -s 854x480 -x265-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=Encoded By JAV STORE' -pix_fmt yuv420p -crf 23 -c:a libopus -b:a 128k -map 0 -ac 2 -vbr 2 -level 4.0 -threads 5"]
     THUMBNAIL = config("THUMBNAIL", default="https://telegra.ph/file/f9e5d783542906418412d.jpg")
 except Exception as e:
     print("Environment vars Missing! Exiting App.")
