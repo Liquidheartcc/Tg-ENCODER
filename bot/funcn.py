@@ -130,25 +130,6 @@ async def sysinfo(e):
     return
 
 
-async def info(file, event):
-    process = subprocess.Popen(
-        ["mediainfo", file, "--Output=HTML"],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
-    stdout, stderr = process.communicate()
-    out = stdout.decode()
-    client = TelegraphPoster(use_api=True)
-    client.create_api_token("TGVid-Comp-Mediainfo")
-    page = client.post(
-        title="TGVid-Comp-Mediainfo",
-        author=((await event.client.get_me()).first_name),
-        author_url=f"https://t.me/{((await event.client.get_me()).username)}",
-        text=out,
-    )
-    return page["url"]
-
-
 def code(data):
     OK.update({len(OK): data})
     return str(len(OK) - 1)
